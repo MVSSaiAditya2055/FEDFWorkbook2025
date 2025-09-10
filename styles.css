@@ -1,0 +1,107 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #f8b500;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+/* Navigation Bar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #333;
+  z-index: 1000;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+nav ul li a {
+  color: white;
+  padding: 1rem;
+  display: block;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  background: #555;
+}
+
+/* Slideshow */
+#slideshow {
+  margin-top: 80px;
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Optional: limits width on large screens */
+  height: 400px;     /* More square-like ratio */
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  border-radius: 12px; /* Soft corners for a modern feel */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 9s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slideshow animation */
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+
+/* Products Section */
+#products {
+  padding: 2rem;
+}
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+  .slides {
+    height: 200px;
+  }
+  .product-grid {
+    flex-direction: column;
+  }
+}
